@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp04"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="botonListaProducto" Content="Listar Productos"  HorizontalAlignment="Left" Margin="76,83,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <!--<DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>-->
+        <DataGrid ItemsSource="{Binding Producto}" x:Name="listadoProductos" HorizontalAlignment="Left" Height="200" Margin="76,0,0,0" VerticalAlignment="Center" Width="400">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID producto" Binding="{Binding idProducto}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombreProducto}"/>
+                <DataGridTextColumn Header="Precio Unidad" Binding="{Binding precioUnidad}"/>
+                <DataGridTextColumn Header="Cantidad Unidad" Binding="{Binding cantidadPorUnidad}"/>
+                <DataGridTextColumn Header="Categoria Producto" Binding="{Binding categoriaProducto}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
